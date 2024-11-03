@@ -1,7 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('button').forEach(function(button) {
-        button.onclick = function() {
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('button').forEach(button => {
+        button.onclick = () => {
             document.querySelector('#hello').style.color = button.dataset.color;
         }
     });
 });
+
+console.log(document.querySelectorAll('button'));
