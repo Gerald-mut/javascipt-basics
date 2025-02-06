@@ -1,0 +1,6 @@
+parseInt
+it parses a string argument and returns an integer
+console.log(parseInt('123'));
+// 123 (default base-10)
+
+The parseFloat() function parses a string argument and returns a floating point number.

@@ -1,0 +1,33 @@
+body {
+    margin-top: 150px;
+    background-color: hsl(225, 82%, 51%)
+}
+
+
+#countLabel {
+    display: block;
+    text-align: center;
+    font-size: 10em;
+    font-family: Helvetica;
+}
+
+#btnContainer {
+    text-align: center;
+}
+
+.buttons {
+    width: 150px;
+    height: 60px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1.5em;
+    color: white;
+    background-color: hsl(63, 12%, 30%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.buttons:hover {
+    background-color: hsl(225, 2%, 58%);
+}
