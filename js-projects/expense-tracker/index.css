@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: #ffffff;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) ;
+    margin: 50px auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+    align-items: center;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+form button {
+    background-color: #28a745;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.expense-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.expense-table th, .expense-table td {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    text-align: left;
+}
+
+.expense-table th {
+    background-color: #f8f8f8;
+}
+
+.total-amount {
+    text-align: right;
+    font-size: 18px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.filter {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.filter label {
+    margin-right: 10px;
+}
+
+.filter select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.total-amount {
+    text-align: right;
+    font-size: 18px;
+}
+
+.edit-btn {
+    margin: 10px;
+}
+
+.delete-btn {
+    margin: 10px;
+}
