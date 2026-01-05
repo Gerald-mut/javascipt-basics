@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     let expenses = [];
+    let editId = null;
 
     expenseForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -14,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const amount = parseFloat(document.getElementById("expense-amount").value);
         const category = document.getElementById("expense-type").value;
         const date = document.getElementById("date").value;
+
+        
+        if (!name || isNaN(amount) || !date) {
+            alert("Please fill all fields correctly.");
+            return;
+        }
 
         const expense = {
             id: Date.now(),
@@ -40,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const id = parseInt(e.target.dataset.id);
             const expense = expenses.find(expense => expense.id === id);
             document.getElementById("expense-name").value = expense.name;
-            document.getElementById("amount").value = expense.amount;
+            document.getElementById("expense-amount").value = expense.amount;
             document.getElementById("expense-type").value = expense.category;
             document.getElementById("date").value = expense.date;
 
@@ -61,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function displayExpenses(expenses) {
-        expenseList.innerHtml = "";
+        expenseList.innerHTML = "";
         expenses.forEach(expense => {
             const row = document.createElement("tr");
             row.innerHTML = `<td>${expense.name}</td>

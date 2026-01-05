@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="button">count</button>
+    <script>
+        //get the elements
+        let count = 0
+        const counter = document.querySelector("#number");
+        const clicker = document.querySelector("#button")
+
+        //add an event listener to listen when the button gets clicked
+        clicker.addEventListener("click", () => {
+            count = count + 1;
+            counter.textContent = count;
+        })
+        
+        counter.innerhtml()
+    </script>
+</body>
+</html>
