@@ -39,3 +39,10 @@ let counter = 0;
 counter++;
 ++counter;
 alert( counter ); // 2, the lines above did the same
+
+// Summary of this in the prefix/postfix youll only see the
+// difference when the value is assigned to a new variable
+//example
+let g = 1;
+//when we do alert(g++) or alert(++g) the output will be 2
+// but when we do x = g++ or x = ++g and alert(x) the output will change
