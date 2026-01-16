@@ -42,3 +42,21 @@ alert(digits); // [1, 2, 3, 4, 5]
 let name = ["T", "e", "s", "h"];
 alert(namee.slice(1,3)); //e,s
 alert(namee.slice(-2)); //s h
+
+
+//map method
+let country = ["Kenya", "Bali", "Tanzania", "South Africa"];
+let result = country.map(item => item.length);
+
+let names = ['Gerald', "Leone", "Mary", "Stacy"];
+let results = names.map(name => name.length);
+
+//forEach method
+names.forEach((name) => {
+    console.log(name);
+});
+
+const scores = [92, 87, 47];
+scores.forEach((score, index) => {
+    console..log(`Score #${index}: ${score}`);
+});
