@@ -60,3 +60,7 @@ const scores = [92, 87, 47];
 scores.forEach((score, index) => {
     console..log(`Score #${index}: ${score}`);
 });
+
+// Filter method
+let ages = [12, 19, 21, 16];
+let result = ages.filter(age => age > 18);
