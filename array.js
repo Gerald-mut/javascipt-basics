@@ -12,7 +12,7 @@ fruits.shift();// Removes the first element apples
 fruits.unshift("apples") //adds apple to the beginning of the array
 
 //splice method in arrays
-//It returns an array of remved elements
+//It returns an array of removed elements
 let subjects = ["Maths", "English", "Science"];
 result = subjects.splice(1,1); //["English"]
 alert(subjects); // ["Maths, Science"]
@@ -58,9 +58,9 @@ names.forEach((name) => {
 
 const scores = [92, 87, 47];
 scores.forEach((score, index) => {
-    console..log(`Score #${index}: ${score}`);
+    console.log(`Score #${index}: ${score}`);
 });
 
 // Filter method
 let ages = [12, 19, 21, 16];
-let result = ages.filter(age => age > 18);
+let resultsss = ages.filter(age => age > 18);
