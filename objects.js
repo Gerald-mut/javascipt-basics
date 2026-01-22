@@ -36,3 +36,62 @@ for(let key in user) {
 }
 
 // in object integer properties are sorted other types return in order of creation
+
+// A variable assigned to an object stores not the object itself, but its “address in memory” – in other words “a reference” to it.
+//two objects are equal only if they are the same object
+let a = {};
+let b = a;
+alert(a == b); // true
+alert(a === b); // true
+//but
+let c = {};
+alert(a == c); // false
+alert(a === c); // false
+
+// const objects can be modified
+const user  = {
+    name: "John"
+};
+user.name = "Pete";
+alert(user.name); //Pete
+// The value of user is constant, it must always reference the same object, but properties of that object are free to change.
+
+//how to duplicate an object
+let user = {
+    name: "John",
+    age: 30
+}
+let clone = {} //the new empty object
+
+//copy all the user properties into clone
+for (let key in user) {
+    clone[key] = user[key];
+}
+
+//copies all properties of user into the empty object and returns it
+let clonee = Object.assign({}, user)
+
+//Object.assign
+let user = { name: "John"};
+let permissions1 = { canView: true};
+let permissions2 = { canEdit: true};
+//copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+//stuctured clone
+//Clones objects with nested properties
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let cloneee = structuredClone(user);
+
+alert( user.sizes === cloneee.sizes ); // false, different objects
+
+// user and clone are totally unrelated now
+user.sizes.width = 60;    // change a property from one place
+alert(cloneee.sizes.width); // 50, not related
