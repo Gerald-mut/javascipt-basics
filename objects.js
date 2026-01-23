@@ -98,3 +98,16 @@ alert(cloneee.sizes.width); // 50, not related
 
 //Garbage collection
 //An object is stored in memory if its reachable otherwise garbage collector will junk the data and free the memory
+
+//this keyword
+//used when a method needs to access information stored in an object
+let customer = {
+    firstName: "John",
+    lastName: "Mut",
+
+    sayHi () {
+        console.log(this.firstName);
+    }
+}
+
+customer.sayHi(); // John
