@@ -30,9 +30,9 @@ let student = {
 };
 
 for(let key in user) {
-    alert( key );  // name, age, isAdmin
+    alert( key );  // name, age, class
   // values for the keys
-  alert( user[key] ); // John, 30, true
+  alert( user[key] ); // Gerald, 21, BCS
 }
 
 // in object integer properties are sorted other types return in order of creation
@@ -95,6 +95,7 @@ alert( user.sizes === cloneee.sizes ); // false, different objects
 // user and clone are totally unrelated now
 user.sizes.width = 60;    // change a property from one place
 alert(cloneee.sizes.width); // 50, not related
+
 
 //Garbage collection
 //An object is stored in memory if its reachable otherwise garbage collector will junk the data and free the memory
