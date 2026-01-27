@@ -1,54 +1,83 @@
-//Array to store todo's objects
-let todos = [
-    {id: 1, text: "Learn javascript", completed: false},
-    {id: 1, text: "Build todo app", completed: false},
-    {id: 1, text: "Deploy app", completed: false},
-];
-// Function to render todos
-function renderTodos() {
-    const todoList = document.getElementById("todoList");
+// Local storage helper (must come FIRST)
+const storage = {
+    get(key) {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+    },
+    set(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
+};
 
-    // Clear current list
-    todoList.innerHTML = "";
-    // Loop through todos and create html for each 
-    todos.forEach(todo => {
-        const li = document.createElement('li');
-        li.className = 'todo-item';
-        li.innerHTML = `
-        <span>${todo.text}</span>
-        <button onclick="deleteTodo(${todo.id})">Delete</button>`;
-        todoList.appendChild(li);
-    });
-    
+// Load todos from localStorage or use defaults
+let todos = storage.get('todos') || [
+    { id: 1, text: "Learn JavaScript", completed: false },
+    { id: 2, text: "Build todo app", completed: false },
+    { id: 3, text: "Deploy app", completed: false },
+];
+
+// Save todos
+function saveTodos() {
+    storage.set('todos', todos);
 }
 
-renderTodos();
+// Render todos
+function renderTodos() {
+    const todoList = document.getElementById("todoList");
+    todoList.innerHTML = "";
 
+    todos.forEach(todo => {
+        const li = document.createElement("li");
+        li.className = "todo-item";
+
+        li.innerHTML = `
+            <span>${todo.text}</span>
+            <button class="delete-btn" data-id="${todo.id}">Delete</button>
+        `;
+
+        todoList.appendChild(li);
+    });
+}
+
+// Add todo
 function addTodo() {
     const input = document.getElementById("todoInput");
     const text = input.value.trim();
 
-    if(text === "") {
+    if (text === "") {
         alert("Please enter a todo");
         return;
     }
 
-    //create a new todo object
     const newTodo = {
         id: Date.now(),
-        text: text,
+        text,
         completed: false
     };
 
-    //add to array
     todos.push(newTodo);
-
-    //clear input
-    todos.value = "";
-
+    saveTodos();
     renderTodos();
 
+    input.value = "";
 }
 
-//add event listener to button
+// Delete todo
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    saveTodos();
+    renderTodos();
+}
+
+// Event listeners
 document.getElementById("addBtn").addEventListener("click", addTodo);
+
+document.getElementById("todoList").addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+        const id = Number(e.target.dataset.id);
+        deleteTodo(id);
+    }
+});
+
+// Initial render
+renderTodos();

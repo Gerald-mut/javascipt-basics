@@ -67,3 +67,18 @@ button:hover {
 .todo-item:last-child {
     border-bottom: none;
 }
+
+.delete-btn {
+    background: #f44336;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #da190b;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
