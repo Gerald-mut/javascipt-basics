@@ -64,3 +64,23 @@ scores.forEach((score, index) => {
 // Filter method
 let ages = [12, 19, 21, 16];
 let resultsss = ages.filter(age => age > 18);
+
+//Map object
+const map = new Map();
+// add a key value to the map
+map.set("name", "Muteru")
+// get a value
+map.get("name");
+//check if a key exists
+map.has("name")
+//check the size of the map, no of entries
+map.size;
+
+// Iterating over the keys
+for(let key of map.keys()){
+    console.log(key);
+}
+//iterating over the values
+for(let value of map.values()) {
+    console.log(value)
+}
