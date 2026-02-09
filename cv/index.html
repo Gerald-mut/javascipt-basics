@@ -1,18 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form>
-        First Name<input type="text" id="fname" name="fname" placeholder="First Name">
-        Last Name<input type="text" id="lname" name="lname" placeholder="Last Name">
-        <!-- <input id="submit-btn" type="submit"> -->
-        <button id="submit-btn" type="submit">Submit</button>
+      First Name<input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="First Name"
+      />
+      Last Name<input
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Last Name"
+      />
+      <label>
+        Paste your CV:
+        <textarea name="cv"></textarea>
+      </label>
+
+      <p id="error" class="error hidden">CV cannot be empty</p>
+      <button id="submit-btn" type="submit">Submit</button>
     </form>
-    
+    <div class="hidden" id="results">
+      <h2>Results</h2>
+      <p>You passed</p>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
