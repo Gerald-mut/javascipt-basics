@@ -28,3 +28,24 @@ form.addEventListener('submit', (e) => {
 submitButton.addEventListener('click', () => {
     results.classList.toggle("hidden");
 })
+
+async function fetchData() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        if(!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+
+        const titleElement = document.getElementById('post-title');
+        titleElement.innerText = `Fetched title: ${data.title}`;
+        titleElement.style.color = "green";
+
+    } catch(error) {
+        console.error("Fetch failed:", error);
+        titleElement.innerText = "Failed to load data";
+    }
+}
+
+fetchData();
