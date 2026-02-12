@@ -29,12 +29,16 @@ submitButton.addEventListener('click', () => {
     results.classList.toggle("hidden");
 })
 
+// async keyword tells javascript this function handles asynchronous tasks and will always returns a promise
 async function fetchData() {
     try {
+        // fetched data from url
+        // await keyword tells js to pause the function and wait for a response
         const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
         if(!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        // converted the data to json
         const data = await response.json();
         console.log(data);
 
