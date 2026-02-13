@@ -31,10 +31,12 @@ submitButton.addEventListener('click', () => {
 
 // async keyword tells javascript this function handles asynchronous tasks and will always returns a promise
 async function fetchData() {
+    const titleElement = document.getElementById('post-title');
+
     try {
         // fetched data from url
         // await keyword tells js to pause the function and wait for a response
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const response = await fetch("https://not-a-site.com");
         if(!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -42,13 +44,12 @@ async function fetchData() {
         const data = await response.json();
         console.log(data);
 
-        const titleElement = document.getElementById('post-title');
         titleElement.innerText = `Fetched title: ${data.title}`;
         titleElement.style.color = "green";
 
     } catch(error) {
         console.error("Fetch failed:", error);
-        titleElement.innerText = "Failed to load data";
+        titleElement.innerText = "Failed to load data: " + error.message;
     }
 }
 
