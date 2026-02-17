@@ -54,3 +54,34 @@ async function fetchData() {
 }
 
 fetchData();
+
+// implement map, foreach, filter and find
+//map
+const cvSkills = ["Javascript", "HTML", "CSS", "Python"];
+const mapCvskills = cvSkills.map(skill => {
+    return `<li>${skill}</li>`
+});
+
+document.getElementById("skills-set").innerHTML = mapCvskills.join('');
+
+const imBored = cvSkills.forEach(skill => {
+    console.log(`${skill}`);
+});
+
+const Users = [
+    {id:1, name: "Gerald", age: 21 },
+    {id:2, name: "Mary", age: 22 },
+    {id:3, name: "Stacy", age: 21 },
+]
+
+const filterUsers = Users.filter(user => {
+    return user.age > 21;
+})
+
+console.log(filterUsers);
+
+const findUsers = Users.find(user => {
+    return user.id == 3;
+})
+
+console.log(findUsers)
