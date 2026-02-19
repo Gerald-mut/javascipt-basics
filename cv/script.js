@@ -3,6 +3,15 @@ const lastName = document.getElementById("lname");
 const submitButton = document.getElementById("submit-btn");
 const form = document.querySelector('form');
 const results = document.getElementById('results');
+const cvTextArea = document.getElementById('cv-draft');
+
+cvTextArea.addEventListener('input', (event) => {
+    const currentText = event.target.value;
+    localStorage.setItem('saved_cv', currentText);
+
+    const receivedCv = localStorage.getItem('saved_cv');
+    console.log(receivedCv)
+})
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
