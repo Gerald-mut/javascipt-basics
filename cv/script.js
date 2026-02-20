@@ -10,7 +10,7 @@ cvTextArea.addEventListener('input', (event) => {
     localStorage.setItem('saved_cv', currentText);
 
     const receivedCv = localStorage.getItem('saved_cv');
-    console.log(receivedCv)
+    console.log(receivedCv);
 })
 
 form.addEventListener('submit', (e) => {
