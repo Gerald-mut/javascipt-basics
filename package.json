@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "glob": "^13.0.6"
+  },
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "anonymous.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gerald-mut/javascipt-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gerald-mut/javascipt-basics/issues"
+  },
+  "homepage": "https://github.com/Gerald-mut/javascipt-basics#readme",
+  "description": ""
+}
