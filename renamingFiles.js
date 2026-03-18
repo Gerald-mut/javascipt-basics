@@ -12,29 +12,24 @@ async function renamingFiles() {
   }
 
   // 2. Iterate through each file provided
-  for (const oldFile of files) {
-    // 3. Check if the file has the matching extension
+  for(oldFile of files) {
+    //cehck if the file ends with the extension we're looking for(the one we want to replace)
     if (oldFile.endsWith(extMatch)) {
-      const newFile = oldFile.replace(extMatch, extReplace);
+      const newFile = file.replace(extMatch, extReplace);
 
-      // 4. Check if the destination already exists (to prevent overwriting)
-      const exists = await fs.pathExists(newFile);
-
-      if (exists) {
-        console.log(`Skipping ${oldFile}: ${newFile} already exists.`);
+      const fileExists = await fs.pathExists(newFile);
+      if (fileExists == true) {
+        console.log(`${newFile} already exists. Skipping`)
       } else {
-        // 5. Perform the rename
         try {
-          await fs.rename(oldFile, newFile);
-          console.log(`Renamed ${oldFile} -> ${newFile}`);
-        } catch (err) {
-          console.error(`Error renaming ${oldFile}:`, err.message);
+          await fs.rename(file, newFile);
+          console.log(`Renamed ${file} to ${newFile}`);
+        } catch(err) {
+          console.error(err);
         }
       }
     } else {
-      console.log(
-        `Skipping ${oldFile}: Extension does not match '${extMatch}'`,
-      );
+      console.log(`Skipping ${file} as it doesn't end with ${extMatch}`);
     }
   }
 }
